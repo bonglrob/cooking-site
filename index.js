@@ -25,7 +25,8 @@
     nightModeIcon.addEventListener('click', toNightMode);
   }
 
-  /** retrieves element id
+  /**
+   * retrieves element id
    * @return {Element} id of element
    * @param {id} id name of element
    */
@@ -41,7 +42,8 @@
     return document.querySelector(selector);
   }
 
-  /** retrieves element array
+  /**
+   * retrieves element array
    * @return {NodeList} nodelist
    * @param {selector} selector name of elements
    */
@@ -64,7 +66,8 @@
     header.classList.add('konamiCode');
   }
 
-  /** Adds new string to spam the page
+  /**
+   * Adds new string to spam the page
    * @return {paragraph} p tag element
    */
   function createFoodScript() {
@@ -73,7 +76,8 @@
     return paragraph;
   }
 
-  /** Switches the theme of the page to be easier read both night and day
+  /**
+   * Switches the theme of the page to be easier read both night and day
    * @param {body} body - body element
    */
   function toNightMode() {
@@ -92,9 +96,10 @@
     swapMoonIcon(body);
   }
 
-  /** switches icon from moon to sun and vice versa
+  /**
+   * switches icon from moon to sun and vice versa
    * @param {body} body -body element
-  */
+   */
   function swapMoonIcon(body) {
     let img = id('night-mode-icon');
     if (body.classList.contains('nightModeBody')) {
