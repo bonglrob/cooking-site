@@ -1,67 +1,69 @@
 /*
-*  Name: Robert Bonglamphone
-*  Date: October 17, 2022
-*  Section: CSE 154 AC Allison Ho -
+*Name: Robert Bonglamphone
+*Date: October 17, 2022
+*Section: CSE 154 AC Allison Ho -
 *
-*  This is the main javascript file with cooking recipes.
-*  You can navigate between dishes by clicking on the button.
-*  You can click on the moon icon to toggle between day and night mode and
-*  keypress any character to spam new elements on the page.
+*This is the main javascript file with cooking recipes.
+*You can navigate between dishes by clicking on the button.
+*You can click on the moon icon to toggle between day and night mode and
+*keypress any character to spam new elements on the page.
 */
 "use strict";
 (function() {
   // keeps all the functions within local scope
   window.addEventListener("load", init);
 
+  // initial document event handlers setup
   function init() {
-    // initial document event handlers setup
     let buttons = qsa('button');
     let nightModeIcon = qs('#nightModeIcon');
-    buttons.forEach(button => { button.addEventListener("click", nextRecipe) });
+    buttons.forEach(button => {
+      button.addEventListener("click", nextRecipe);
+    });
     window.addEventListener('keypress', konamiCode);
     nightModeIcon.addEventListener('click', toNightMode);
   }
 
+  // retrieves element id
   function id(id) {
-    // retrieves element id
     return document.getElementById(id);
   }
 
+  // retrieves element
   function qs(selector) {
-    // retrieves element
     return document.querySelector(selector);
   }
 
+  // retrieves element array
   function qsa(selector) {
-    // retrieves element array
     return document.querySelectorAll(selector);
   }
 
+  // switches between recipes
   function nextRecipe() {
-    // switches between recipes
     let section = qsa('section');
     for (let i = 0; i < section.length; i++) {
       section[i].classList.toggle('current-recipe');
     }
   }
 
+  // italizes the header after keypress
   function konamiCode() {
-    // italizes the header after keypress
     const header = qs('header');
     header.appendChild(createFoodScript());
     header.classList.add('konamiCode');
   }
 
+  // Adds new string to spam the page
   function createFoodScript() {
-    // Adds new string to spam the page
     let paragraph = document.createElement('p');
     paragraph.textContent = "FOOD";
     return paragraph;
   }
 
+  // Switches the colors and theme of the
+  //page to be easier read both night and day
   function toNightMode() {
-    // Switches the colors and theme of the
-    //page to be easier read both night and day
     let body = qs('body');
     let nav = qs('nav');
     let header = qs('h1');
@@ -71,12 +73,14 @@
     nav.classList.toggle('nightModeNav');
     header.classList.toggle('nightModeHead');
     article.classList.toggle('nightModeArt');
-    sections.forEach(section => { section.classList.toggle('nightModeSec') });
+    sections.forEach(section => {
+      section.classList.toggle('nightModeSec')
+    });
     swapMoonIcon(body);
   }
 
+  // switches icon from moon to sun and vice versa
   function swapMoonIcon(body) {
-    // switches icon from moon to sun and vice versa
     let img = id('nightModeIcon');
     if (body.classList.contains('nightModeBody')) {
       img.src = "img/sun-icon.png";
@@ -86,7 +90,5 @@
       img.alt = "moon icon";
     }
   }
-
 })();
-
 
