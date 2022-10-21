@@ -1,12 +1,10 @@
-/*
-  Name: Robert Bonglamphone
+/*   Name: Robert Bonglamphone
   Date: October 17, 2022
   Section: CSE 154 AC Allison Ho -
 
   This is the main javascript file with cooking recipes from japanese and
   lao cuisine. You can filter and navigate between dishes by clicking on the
-  buttons.
-  *** */
+  buttons. */
 "use strict";
 (function() {
   window.addEventListener("load", init);
@@ -48,12 +46,15 @@
     header.classList.add('konamiCode');
   }
 
+/* Adds new string to spam the page*/
   function createFoodScript() {
-    let p = document.createElement('p');
-    p.textContent = "FOOD";
-    return p;
+    let paragraph = document.createElement('p');
+    paragraph.textContent = "FOOD";
+    return paragraph;
   }
 
+/* Switches the colors and theme of the
+page to be easier read both night and day */
   function toNightMode() {
     let body = qs('body');
     let nav = qs('nav');
@@ -73,15 +74,14 @@
   function swapMoonIcon(body) {
     let img = id('nightModeIcon');
     if (body.classList.contains('nightModeBody')) {
-      img.src="img/sun-icon.png";
-      img.alt="sun icon";
+      img.src = "img/sun-icon.png";
+      img.alt = "sun icon";
     } else {
-    img.src="img/moon-icon.png";
-    img.alt="moon icon";
+    img.src = "img/moon-icon.png";
+    img.alt = "moon icon";
     }
   }
 
 })();
-
 
 
