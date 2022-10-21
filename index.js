@@ -1,12 +1,12 @@
-/*
-*Name: Robert Bonglamphone
-*Date: October 17, 2022
-*Section: CSE 154 AC Allison Ho -
-*
-*This is the main javascript file with cooking recipes.
-*You can navigate between dishes by clicking on the button.
-*You can click on the moon icon to toggle between day and night mode and
-*keypress any character to spam new elements on the page.
+/**
+ * Name: Robert Bonglamphone
+ * Date: October 17, 2022
+ * Section: CSE 154 AC Allison Ho -
+ *
+ * This is the main javascript file with cooking recipes.
+ * You can navigate between dishes by clicking on the button.
+ * You can click on the moon icon to toggle between day and night mode and
+ * keypress any character to spam new elements on the page.
 */
 "use strict";
 (function() {
@@ -16,7 +16,7 @@
   // initial document event handlers setup
   function init() {
     let buttons = qsa('button');
-    let nightModeIcon = qs('#nightModeIcon');
+    let nightModeIcon = qs('#night-mode-icon');
     buttons.forEach(button => {
       button.addEventListener("click", nextRecipe);
     });
