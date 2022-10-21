@@ -34,7 +34,8 @@
     return document.getElementById(id);
   }
 
-  /** retrieves element
+  /**
+   * retrieves element
    * @return {Element} element
    * @param {selector} selector name of element
    */
