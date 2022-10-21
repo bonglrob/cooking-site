@@ -9,6 +9,7 @@
  * keypress any character to spam new elements on the page.
  */
 "use strict";
+
 /** keeps all the functions within local scope */
 (function() {
   window.addEventListener("load", init);
@@ -26,13 +27,15 @@
 
   /** retrieves element id
    * @return {Element} id of element
-  */
+   * @param {string} string name of element
+   */
   function id(id) {
     return document.getElementById(id);
   }
 
   /** retrieves element
    * @return {Element} element
+   * @param {string} string name of element
    */
   function qs(selector) {
     return document.querySelector(selector);
@@ -40,6 +43,7 @@
 
   /** retrieves element array
    * @return {NodeList} nodelist
+   * @param {string} string name of elements
    */
   function qsa(selector) {
     return document.querySelectorAll(selector);
@@ -69,7 +73,9 @@
     return paragraph;
   }
 
-  /** Switches the theme of the page to be easier read both night and day */
+  /** Switches the theme of the page to be easier read both night and day
+   * @param {Element} body - body element
+   */
   function toNightMode() {
     let body = qs('body');
     let nav = qs('nav');
