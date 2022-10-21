@@ -27,7 +27,7 @@
 
   /** retrieves element id
    * @return {Element} id of element
-   * @param {string} string name of element
+   * @param {id} string name of element
    */
   function id(id) {
     return document.getElementById(id);
@@ -35,7 +35,7 @@
 
   /** retrieves element
    * @return {Element} element
-   * @param {string} string name of element
+   * @param {selector} string name of element
    */
   function qs(selector) {
     return document.querySelector(selector);
@@ -43,7 +43,7 @@
 
   /** retrieves element array
    * @return {NodeList} nodelist
-   * @param {string} string name of elements
+   * @param {selector} string name of elements
    */
   function qsa(selector) {
     return document.querySelectorAll(selector);
@@ -65,7 +65,7 @@
   }
 
   /** Adds new string to spam the page
-   * @return {Element} p tag element
+   * @return {paragraph} p tag element
    */
   function createFoodScript() {
     let paragraph = document.createElement('p');
@@ -74,7 +74,7 @@
   }
 
   /** Switches the theme of the page to be easier read both night and day
-   * @param {Element} body - body element
+   * @param {body} body - body element
    */
   function toNightMode() {
     let body = qs('body');
