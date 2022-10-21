@@ -7,7 +7,7 @@
  * You can navigate between dishes by clicking on the button.
  * You can click on the moon icon to toggle between day and night mode and
  * keypress any character to spam new elements on the page.
- * */
+ */
 "use strict";
 /** keeps all the functions within local scope */
 (function() {
@@ -24,17 +24,23 @@
     nightModeIcon.addEventListener('click', toNightMode);
   }
 
-  /** retrieves element id */
+  /** retrieves element id
+   * @return {Element} id of element
+  */
   function id(id) {
     return document.getElementById(id);
   }
 
-  /** retrieves element */
+  /** retrieves element
+   * @return {Element} element
+   */
   function qs(selector) {
     return document.querySelector(selector);
   }
 
-  /** retrieves element array */
+  /** retrieves element array
+   * @return {NodeList} nodelist
+   */
   function qsa(selector) {
     return document.querySelectorAll(selector);
   }
@@ -54,7 +60,9 @@
     header.classList.add('konamiCode');
   }
 
-  /** Adds new string to spam the page */
+  /** Adds new string to spam the page
+   * @return {Element} p tag element
+   */
   function createFoodScript() {
     let paragraph = document.createElement('p');
     paragraph.textContent = "FOOD";
