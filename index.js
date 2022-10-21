@@ -27,7 +27,7 @@
 
   /** retrieves element id
    * @return {Element} id of element
-   * @param {id} string name of element
+   * @param {id} id name of element
    */
   function id(id) {
     return document.getElementById(id);
@@ -35,7 +35,7 @@
 
   /** retrieves element
    * @return {Element} element
-   * @param {selector} string name of element
+   * @param {selector} selector name of element
    */
   function qs(selector) {
     return document.querySelector(selector);
@@ -43,7 +43,7 @@
 
   /** retrieves element array
    * @return {NodeList} nodelist
-   * @param {selector} string name of elements
+   * @param {selector} selector name of elements
    */
   function qsa(selector) {
     return document.querySelectorAll(selector);
@@ -92,7 +92,9 @@
     swapMoonIcon(body);
   }
 
-  /** switches icon from moon to sun and vice versa */
+  /** switches icon from moon to sun and vice versa
+   * @param {body} body -body element
+  */
   function swapMoonIcon(body) {
     let img = id('night-mode-icon');
     if (body.classList.contains('nightModeBody')) {
